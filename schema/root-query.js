@@ -4,7 +4,6 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLList,
-  GraphQLSchema,
   GraphQLNonNull
 } = graphql;
 const Db = require("../DB/");
@@ -26,16 +25,16 @@ const Query = new GraphQLObjectType({
         return Db.models.company.findAll({ where: args });
       }
     },
-    // user: {
-    //   type: new GraphQLList(User),
-    //   args: {
-    //     id: { type: GraphQLInt },
-    //     name: { type: GraphQLString }
-    //   },
-    //   resolve(root, args) {
-    //     return Db.models.user.findAll({ where: args });
-    //   }
-    // },
+    user: {
+      type: new GraphQLList(User),
+      args: {
+        id: { type: GraphQLInt },
+        name: { type: GraphQLString }
+      },
+      resolve(root, args) {
+        return Db.models.user.findAll({ where: args });
+      }
+    },
     product: {
       type: new GraphQLList(Product),
       args: {

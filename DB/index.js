@@ -181,19 +181,19 @@ OrderDetail.hasMany(Product);
 PurchaseOrder.hasOne(OrderDetail);
 OrderDetail.hasMany(Product);
 
-Company.sync({ force: true }).then(() => {
-    _.times(10, () => {
-        return Company.create({
-            companyname: Faker.company.companyName()
-        });
-    });
-});
-User.sync({ force: true }).then(() => {
-    _.times(10, () => {
-        return User.create({
-            userfirst: Faker.name.firstName(),
-            email: Faker.internet.email()
-        });
-    });
-});
+// Company.sync({ force: true }).then(() => {
+//     _.times(10, () => {
+//         return Company.create({
+//             companyname: Faker.company.companyName()
+//         });
+//     });
+// });
+// User.sync({ force: true }).then(() => {
+//     _.times(10, () => {
+//         return User.create({
+//             userfirst: Faker.name.firstName(),
+//             email: Faker.internet.email()
+//         });
+//     });
+// });
 module.exports = sequelize;
