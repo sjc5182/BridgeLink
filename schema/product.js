@@ -1,5 +1,6 @@
 const graphql = require("graphql");
 const { GraphQLInt, GraphQLObjectType, GraphQLString, GraphQLList } = graphql;
+const Db = require("../DB/");
 
 const Product = new GraphQLObjectType({
   name: "Product",

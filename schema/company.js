@@ -2,6 +2,9 @@ const graphql = require("graphql");
 const { GraphQLInt, GraphQLObjectType, GraphQLString, GraphQLList } = graphql;
 const Db = require("../DB/");
 
+const User = require('./user');
+const Product = require('./product');
+
 const Company = new GraphQLObjectType({
   name: "Company",
   fields: () => {

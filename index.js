@@ -1,6 +1,6 @@
 const express = require ('express');
 const GraphHTTP = require ('express-graphql');
-const Schema = require ('./schema/company');
+const Schema = require ('./schema/');
 
 const PORT = 4000;
 
