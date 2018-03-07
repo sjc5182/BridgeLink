@@ -73,18 +73,18 @@ const Company = new GraphQLObjectType({
         return company.creationdate;
       }
     },
-    user: {
-      type: GraphQLList(User),
-      resolve(company) {
-        return company.getUsers();
-      }
-    },
-    product: {
-      type: GraphQLList(Product),
-      resolve(company) {
-        return company.getProducts();
-      }
-    }
+    // user: {
+    //   type: GraphQLList(User),
+    //   resolve(company) {
+    //     return company.getUsers();
+    //   }
+    // },
+    // product: {
+    //   type: GraphQLList(Product),
+    //   resolve(company) {
+    //     return company.getProducts();
+    //   }
+    // }
   })
 });
 

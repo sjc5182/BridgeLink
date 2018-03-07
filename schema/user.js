@@ -54,12 +54,12 @@ const User = new GraphQLObjectType({
         return user.creationdate;
       }
     },
-    company: {
-      type: Company,
-      resolve(user) {
-        return user.getCompany();
-      }
-    }
+    // company: {
+    //   type: Company,
+    //   resolve(user) {
+    //     return user.getCompany();
+    //   }
+    // }
   })
 });
 

@@ -36,12 +36,12 @@ const Product = new GraphQLObjectType({
         return product.price;
       }
     },
-    company: {
-      type: Company,
-      resolve(product) {
-        return product.getCompany();
-      }
-    }
+    // company: {
+    //   type: Company,
+    //   resolve(product) {
+    //     return product.getCompany();
+    //   }
+    // }
   })
 });
 
