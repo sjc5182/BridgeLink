@@ -6,7 +6,7 @@ const _ = require('lodash');
 const sequelize = new Sequelize(
     'BLDB',
     'root',
-    'Shiguang1207$',
+    'root',
     {
         dialect: 'mysql',
         host: 'localhost',
@@ -191,7 +191,7 @@ Company.sync({ force: true }).then(() => {
 User.sync({ force: true }).then(() => {
     _.times(10, () => {
         return User.create({
-            name: Faker.name.findName(),
+            userfirst: Faker.name.firstName(),
             email: Faker.internet.email()
         });
     });
