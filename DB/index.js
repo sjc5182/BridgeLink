@@ -1,14 +1,14 @@
 import Sequelize from 'sequelize';
 
 //const Sequelize = require('sequelize');
-const config = require('./config');
-const Faker = require('faker');
-const _ = require('lodash');
-
+//const config = require('./config');
+//const Faker = require('faker');
+//const _ = require('lodash');
+//import Lodash from 'lodash';
 const sequelize = new Sequelize(
     'BLDB',
-    config.user,
-    config.password,
+    'root',
+    'Shiguang1207$',
     {
         dialect: 'mysql',
         host: 'localhost',
