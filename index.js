@@ -9,6 +9,7 @@ import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import path from 'path';
 import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
+import cors from 'cors';
 import models from './DB';
 
 const PORT = 4000;
@@ -19,12 +20,18 @@ const schema = makeExecutableSchema({typeDefs, resolvers,});
 
 const app = express();
 
+app.use(cors('*'));
 
 const graphqlEndpoint = '/graphql';
 
 app.use(graphqlEndpoint, bodyParser.json(), graphqlExpress({
   schema,
-  context: {models},
+  context: {
+    models,
+    user:{
+      id: 1,
+    },
+  },
 }));
 
 app.use('/graphiql', graphiqlExpress({ endpointURL: graphqlEndpoint }));

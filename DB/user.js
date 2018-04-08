@@ -10,12 +10,10 @@ export default (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             unique: true,
         },
+        password: {
+            type: DataTypes.STRING,
+        },
     });
-    User.associate = (models) => {
-        User.belongsTo(models.Company, {
-          foreignKey: 'companyTitle_id'
-        });
-      };
 
 //     User.sync({ force: true }).then(() => {
 //     _.times(10, () => {

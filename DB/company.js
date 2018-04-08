@@ -10,8 +10,8 @@ export default (sequelize, DataTypes) => {
   });
 
   Company.associate = (models) => {
-    Company.hasMany(models.User, {
-      foreignKey: 'companyTitle_id'
+    Company.belongsTo(models.User, {
+      foreignKey: 'owner'
     });
   };
 
